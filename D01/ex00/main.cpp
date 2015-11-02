@@ -1,6 +1,6 @@
 #include "Pony.cpp"
 #include <iostream>
-/*
+
 void ponyOnTheHeap( void )
 {
 	std::cout << "Heap Zone" << std::endl;
@@ -28,43 +28,6 @@ int main( void )
 	//ponyOnTheHeap( );
 	std::cout << std::endl;
 	//ponyOnTheStack( );
-
-	return 0;
-}
-*/
-
-void ponyOnTheStack( void )
-{
-	std::cout << "On the Stack" << std::endl;
-	Pony ponyStack = Pony("Eden", "white", "80");
-
-	std::cout << "this pony is " << ponyStack.getColor( ) << " and it weight " << ponyStack.getHorn( ) << std::endl;
-
-	std::cout << ponyStack.getName( ) << " running like a bitch because he is afraid about gangsta !" << std::endl;
-
-	return ;
-}
-
-void ponyOnTheHeap( void )
-{
-	std::cout << "On the Heap" << std::endl;
-
-	Pony *ponyHeap = new Pony("Edouard", "blue", "100");
-
-	std::cout << "this pony is " << ponyHeap->getColor( ) << " and it weight " << ponyHeap->getHorn( ) << std::endl;
-
-	std::cout << ponyHeap->getName( ) << " eating !" << std::endl;
-
-	delete ponyHeap;
-
-	return ;
-}
-
-int		main( void )
-{
-	ponyOnTheStack();
-	std::cout << std::endl;
-	ponyOnTheHeap();
 
 	return 0;
 }
