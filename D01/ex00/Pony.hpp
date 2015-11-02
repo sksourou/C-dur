@@ -1,3 +1,5 @@
+#ifndef PONY_HPP
+#define PONY_HPP
 
 #include <iostream>
 
@@ -19,3 +21,4 @@ class Pony {
 		std::string 	_color;
 		std::string 	_horn;
 };
+#endif
