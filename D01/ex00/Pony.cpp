@@ -1,3 +1,15 @@
+// ************************************************************************** //
+//                                                                            //
+//                                                        :::      ::::::::   //
+//   Pony.cpp                                           :+:      :+:    :+:   //
+//                                                    +:+ +:+         +:+     //
+//   By: sksourou <sksourou@student.42.fr>          +#+  +:+       +#+        //
+//                                                +#+#+#+#+#+   +#+           //
+//   Created: 2015/11/03 14:46:47 by sksourou          #+#    #+#             //
+//   Updated: 2015/11/03 14:46:48 by sksourou         ###   ########.fr       //
+//                                                                            //
+// ************************************************************************** //
+
 #include <iostream>
 #include "Pony.hpp"
 
@@ -6,7 +18,7 @@
 **/
 Pony::Pony( std::string name, std::string color, std::string horn ) : _name(name), _color(color), _horn(horn)
 {
-	std::cout << "Welcome to" << this->_name << "good luck ! :)" << std::endl;
+	std::cout << "Welcome to " << this->_name << " good luck ! :)" << std::endl;
 	return ;
 }
 
@@ -15,7 +27,7 @@ Pony::Pony( std::string name, std::string color, std::string horn ) : _name(name
 **/
 Pony::~Pony( void )
 {
-	std::cout << "Good by to" << this->_name << "unlucky bro" << std::endl;
+	std::cout << "Good by to " << this->_name << " unlucky bro" << std::endl;
 	return ;
 }
 
