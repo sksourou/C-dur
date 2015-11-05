@@ -11,7 +11,6 @@
 // ************************************************************************** //
 
 #include "FragTrap.hpp"
-#include <iostream>
 
 const char		*arrayAttacks[] = {
 	"Kill, reload! Kill, reload! KILL! RELOAD!",

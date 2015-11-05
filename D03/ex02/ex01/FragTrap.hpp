@@ -1,4 +1,4 @@
-// ************************************************************************** //
+	// ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
 //   FragTrap.hpp                                       :+:      :+:    :+:   //
@@ -16,9 +16,8 @@
 #include <iostream>
 
 
-class FragTrap {
+class FragTrap : public ClapTrap {
 	public:
-
 		FragTrap( void );
 		FragTrap( std::string name );
 		~FragTrap( void );

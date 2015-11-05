@@ -1,30 +1,29 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   FragTrap.hpp                                       :+:      :+:    :+:   //
+//   ScavTrap.hpp                                       :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: sksourou <sksourou@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/11/04 18:26:00 by sksourou          #+#    #+#             //
-//   Updated: 2015/11/04 18:26:01 by sksourou         ###   ########.fr       //
+//   Created: 2015/11/05 16:28:55 by sksourou          #+#    #+#             //
+//   Updated: 2015/11/05 16:28:56 by sksourou         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <iostream>
 
-
-class FragTrap {
+class ScavTrap {
 	public:
 
-		FragTrap( void );
-		FragTrap( std::string name );
-		~FragTrap( void );
+		ScavTrap( void );
+		ScavTrap( std::string name );
+		~ScavTrap( void );
 
-		FragTrap &		operator=( FragTrap const & rhs );
-		void					vaulthunter_dot_exe(std::string const & target);
+		ScavTrap &				operator=( ScavTrap const & rhs );
+		void					challengeNewcomer( std::string const & target );
 		void 					rangedAttack(std::string const & target);
 		void 					meleeAttack(std::string const & target);
 		void 					takeDamage(unsigned int amount);
@@ -38,7 +37,6 @@ class FragTrap {
 		unsigned int 			getRangedAttackDamage( void ) const;
 		unsigned int 			getArmorDamageReduction( void ) const;
 		std::string 			getName( void )  const;
-
 	private:
 		unsigned int 			_hitPoints;
 		unsigned int 			_maxHitPoints;
