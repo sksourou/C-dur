@@ -20,39 +20,6 @@ const char		*arrayAttack[] = {
 	NULL
 };
 
-void 			ScavTrap::meleeAttack(std::string const & target) {
-	std::cout << "SCAV-TP " << this->_name << " attacks " << target;
-	std::cout << " at Melee, causing " << this->_meleeAttackDamage << " points of damage !" << std::endl;
-}
-
-void			ScavTrap::rangedAttack(std::string const & target) {
-	std::cout << "SCAV-TP " << this->_name << " attacks " << target;
-	std::cout << " at range, causing " << this->_rangedAttackDamage << " points of damage !" << std::endl;
-	return ;
-}
-
-void 			ScavTrap::takeDamage(unsigned int amount) {
-	if (amount > this->_maxHitPoints)
-		amount = this->_maxHitPoints;
-	if ((int)(amount - this->_armorDamageReduction) < 0)
-		amount = 0;
-	else
-		amount -= this->_armorDamageReduction;
-	std::cout << "SCAV-TP " << this->_name << " taked " << amount << " damages " << std::endl;
-	if ((int)(this->_hitPoints - amount) < 0)
-		this->_hitPoints = 0;
-	else
-		this->_hitPoints -= amount;
-}
-
-void 	ScavTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "SCAV-TP " << this->_name << " recovered " << amount << " hit points";
-	if ((this->_hitPoints + amount) > this->_maxHitPoints)
-		this->_hitPoints = 100;
-	else
-		this->_hitPoints += amount;
-}
 void		ScavTrap::challengeNewcomer( std::string const & target ) {
 		std::cout << "SC4V-TR4P attack " << target << ". \"" << arrayAttack[rand() % 5] << "\"" << std::endl;
 }
@@ -71,7 +38,7 @@ ScavTrap::ScavTrap( void ) {
 	std::cout <<"Scavtrap -- start bootup sequence."<< std::endl;
 }
 
-ScavTrap::ScavTrap( std::string name ) : _name(name)
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
@@ -103,41 +70,4 @@ ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs) {
 	this->_rangedAttackDamage = rhs._rangedAttackDamage;
 	this->_armorDamageReduction = rhs._armorDamageReduction;
 	return *this;
-}
-
-
-unsigned int	ScavTrap::getHitPoints( void ) const {
-	return this->_hitPoints;
-}
-
-unsigned int ScavTrap::getMaxHitPoints( void ) const {
-	return this->_maxHitPoints;
-}
-
-unsigned int ScavTrap::getEnergyPoints( void ) const {
-	return this->_energyPoints;
-}
-
-unsigned int ScavTrap::getMaxEnergyPoints( void ) const {
-	return this->_maxEnergyPoints;
-}
-
-unsigned int ScavTrap::getLevel( void ) const {
-	return this->_level;
-}
-
-unsigned int ScavTrap::getMeleeAttackDamage( void ) const {
-	return this->_meleeAttackDamage;
-}
-
-unsigned int ScavTrap::getArmorDamageReduction( void ) const {
-	return this->_armorDamageReduction;
-}
-
-unsigned int ScavTrap::getRangedAttackDamage( void ) const {
-	return	this->_rangedAttackDamage;
-}
-
-std::string ScavTrap::getName( void )  const {
-	return this->_name;
 }

@@ -21,39 +21,7 @@ const char		*arrayAttacks[] = {
 	NULL
 };
 
-void 			FragTrap::meleeAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target;
-	std::cout << " at Melee, causing " << this->_meleeAttackDamage << " points of damage !" << std::endl;
-}
 
-void			FragTrap::rangedAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target;
-	std::cout << " at range, causing " << this->_rangedAttackDamage << " points of damage !" << std::endl;
-	return ;
-}
-
-void 			FragTrap::takeDamage(unsigned int amount) {
-	if (amount > this->_maxHitPoints)
-		amount = this->_maxHitPoints;
-	if ((int)(amount - this->_armorDamageReduction) < 0)
-		amount = 0;
-	else
-		amount -= this->_armorDamageReduction;
-	std::cout << "FR4G-TP " << this->_name << " taked " << amount << " damages " << std::endl;
-	if ((int)(this->_hitPoints - amount) < 0)
-		this->_hitPoints = 0;
-	else
-		this->_hitPoints -= amount;
-}
-
-void 	FragTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "FR4G-TP " << this->_name << " recovered " << amount << " hit points";
-	if ((this->_hitPoints + amount) > this->_maxHitPoints)
-		this->_hitPoints = 100;
-	else
-		this->_hitPoints += amount;
-}
 void	FragTrap::vaulthunter_dot_exe(std::string const & target) {
 	if (this->_energyPoints >= 25)
 	{
@@ -75,10 +43,10 @@ FragTrap::FragTrap( void ) {
 	this->_rangedAttackDamage = 20;
 	this->_armorDamageReduction = 5;
 
-	std::cout <<"Claptrap -- start bootup sequence."<< std::endl;
+	std::cout <<"Fragtrap -- start bootup sequence."<< std::endl;
 }
 
-FragTrap::FragTrap( std::string name ) : _name(name)
+FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 {
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
@@ -89,13 +57,13 @@ FragTrap::FragTrap( std::string name ) : _name(name)
 	this->_rangedAttackDamage = 20;
 	this->_armorDamageReduction = 5;
 
-	std::cout << "Claptrap -- start bootup sequence." << this->_name << "ready" << std::endl;
+	std::cout << "Fragtrap -- start bootup sequence." << this->_name << "ready" << std::endl;
 
 	return ;
 }
 
 FragTrap::~FragTrap( void ) {
-	std::cout << "Argh arghargh death gurgle gurglegurgle urgh... " << this->_name << "death." << std::endl;
+	std::cout << "FragTrap - Argh arghargh death gurgle gurglegurgle urgh... " << this->_name << "death." << std::endl;
 	return ;
 }
 
@@ -110,43 +78,6 @@ FragTrap &	FragTrap::operator=( FragTrap const & rhs) {
 	this->_rangedAttackDamage = rhs._rangedAttackDamage;
 	this->_armorDamageReduction = rhs._armorDamageReduction;
 	return *this;
-}
-
-
-unsigned int	FragTrap::getHitPoints( void ) const {
-	return this->_hitPoints;
-}
-
-unsigned int FragTrap::getMaxHitPoints( void ) const {
-	return this->_maxHitPoints;
-}
-
-unsigned int FragTrap::getEnergyPoints( void ) const {
-	return this->_energyPoints;
-}
-
-unsigned int FragTrap::getMaxEnergyPoints( void ) const {
-	return this->_maxEnergyPoints;
-}
-
-unsigned int FragTrap::getLevel( void ) const {
-	return this->_level;
-}
-
-unsigned int FragTrap::getMeleeAttackDamage( void ) const {
-	return this->_meleeAttackDamage;
-}
-
-unsigned int FragTrap::getArmorDamageReduction( void ) const {
-	return this->_armorDamageReduction;
-}
-
-unsigned int FragTrap::getRangedAttackDamage( void ) const {
-	return	this->_rangedAttackDamage;
-}
-
-std::string FragTrap::getName( void )  const {
-	return this->_name;
 }
 
 
