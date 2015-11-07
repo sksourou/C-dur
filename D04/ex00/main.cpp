@@ -12,6 +12,13 @@
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
+<<<<<<< HEAD
+
+int main( void ) {
+	Sorcerer test("Robert ", "the Magnificent ");
+	Victim 	test1(" Bob ");
+
+=======
 #include "Peon.hpp"
 
 int main( void ) {
@@ -24,5 +31,6 @@ int main( void ) {
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 	robert.polymorph(Adidas);
+>>>>>>> c9fe356469f5a1820c6daa2d73c79447030f07dc
 	return 0;
 }

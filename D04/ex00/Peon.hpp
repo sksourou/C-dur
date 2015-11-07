@@ -9,6 +9,8 @@
 //   Updated: 2015/11/06 12:30:50 by sksourou         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
+<<<<<<< HEAD
+=======
 #ifndef PEON_HPP
 # define PEON_HPP
 
@@ -21,3 +23,4 @@ class Peon : public Victim {
 		~Peon( void );
 };
 #endif
+>>>>>>> c9fe356469f5a1820c6daa2d73c79447030f07dc
